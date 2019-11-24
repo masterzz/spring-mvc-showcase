@@ -1,6 +1,5 @@
 package org.springframework.springboot;
 
-import org.springframework.aop.AppConfig;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
@@ -22,6 +21,6 @@ public class App implements WebApplicationInitializer {
         DispatcherServlet servlet = new DispatcherServlet(ac);
         ServletRegistration.Dynamic registration = servletCxt.addServlet("app", servlet);
         registration.setLoadOnStartup(1);
-        registration.addMapping("/app/*");
+        registration.addMapping("*.do");
     }
 }
