@@ -18,6 +18,7 @@ public class App implements WebApplicationInitializer {
         ac.refresh();
 
         // Create and register the DispatcherServlet
+//        web环境
         DispatcherServlet servlet = new DispatcherServlet(ac);
         ServletRegistration.Dynamic registration = servletCxt.addServlet("app", servlet);
         registration.setLoadOnStartup(1);
