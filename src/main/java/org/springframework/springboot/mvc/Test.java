@@ -1,4 +1,4 @@
-package org.springframework.springboot;
+package org.springframework.springboot.mvc;
 
 import javax.servlet.annotation.WebServlet;
 

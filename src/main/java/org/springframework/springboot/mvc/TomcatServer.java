@@ -1,4 +1,4 @@
-package org.springframework.springboot;
+package org.springframework.springboot.mvc;
 
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.startup.Tomcat;
