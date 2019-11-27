@@ -6,6 +6,7 @@ import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletRegistration;
+import javax.servlet.annotation.HandlesTypes;
 
 public class App implements WebApplicationInitializer {
     @Override
@@ -18,6 +19,7 @@ public class App implements WebApplicationInitializer {
 
         // Create and register the DispatcherServlet
 //        web环境
+        System.out.println("App");
         DispatcherServlet servlet = new DispatcherServlet(ac);
         ServletRegistration.Dynamic registration = servletCxt.addServlet("app", servlet);
         registration.setLoadOnStartup(1);

@@ -8,7 +8,7 @@ public class TomcatServer {
         Tomcat tomcat = new Tomcat();
         tomcat.setPort(9090);
 
-        tomcat.addWebapp("/", "E:\\Gitspace\\github\\spring-mvc-showcase");
+        tomcat.addWebapp("/", "E:\\Gitspace\\github");
         try {
             tomcat.start();
             tomcat.getServer().await();
