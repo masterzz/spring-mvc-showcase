@@ -3,6 +3,7 @@ package org.springframework.concurency.cas;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicStampedReference;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 /**
  * @author 朱斌荣
@@ -13,8 +14,10 @@ import java.util.concurrent.atomic.AtomicStampedReference;
  */
 public class Cas2 {
     private static volatile int m = 0;
+    private static volatile int stamp = 1;
     private static AtomicInteger atomicInteger = new AtomicInteger(100);
-    private static AtomicStampedReference atomicStampedReference = new AtomicStampedReference(100, 1);
+    private static AtomicStampedReference atomicStampedReference = new AtomicStampedReference(100, stamp);
+    private AbstractQueuedSynchronizer abstractQueuedSynchronizer;
 
 
     public static void main(String args[]) throws InterruptedException {
@@ -23,8 +26,7 @@ public class Cas2 {
             System.out.println(atomicInteger.get());
         });
 
-        thread1.start();
-        ;
+//        thread1.start();
 
         Thread thread2 = new Thread(() -> {
             try {
@@ -35,7 +37,7 @@ public class Cas2 {
             atomicInteger.compareAndSet(110, 100);
             System.out.println(atomicInteger.get());
         });
-        thread2.start();
+//        thread2.start();
 
         Thread thread3 = new Thread(() -> {
             try {
@@ -46,7 +48,7 @@ public class Cas2 {
             atomicInteger.compareAndSet(100, 120);
             System.out.println(atomicInteger.get());
         });
-        thread3.start();
+//        thread3.start();
 
         System.out.println("=====================");
 
@@ -58,5 +60,26 @@ public class Cas2 {
             }
             System.out.println(atomicStampedReference.compareAndSet(100,110,atomicStampedReference.getStamp(),atomicStampedReference.getStamp()+1));
         });
+        tf1.start();
+
+        Thread tf2 = new Thread(() -> {
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(atomicStampedReference.compareAndSet(110,100,atomicStampedReference.getStamp(),atomicStampedReference.getStamp()+1));
+        });
+        tf2.start();
+
+        Thread tf3 = new Thread(() -> {
+            try {
+                TimeUnit.SECONDS.sleep(4);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(atomicStampedReference.compareAndSet(100,120,atomicStampedReference.getStamp(),atomicStampedReference.getStamp()+1));
+        });
+        tf3.start();
     }
 }
