@@ -1,5 +1,6 @@
 package org.springframework.ioc.dao;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 
@@ -10,8 +11,9 @@ import org.springframework.stereotype.Repository;
  * @Description ADDFUNCTION
  * @Reason ADDREASON
  */
-@Repository("dao")
+@Repository("indexDaoImpl")
 @Scope("prototype")
+//@Primary
 public class IndexDaoImpl implements IndexDao {
     @Override
     public void test1() {
