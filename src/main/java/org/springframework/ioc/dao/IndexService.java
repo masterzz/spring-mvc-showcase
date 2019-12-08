@@ -19,7 +19,8 @@ import org.springframework.stereotype.Service;
 //@Scope("prototype")
 public class IndexService /*implements ApplicationContextAware*/ {
     @Autowired
-    @Qualifier("indexDaoImpl")
+//    @Qualifier("indexDaoImpl")
+    @Qualifier("indexDaoImpl1")
     private IndexDao dao;
 
 //    private ApplicationContext applicationContext;
