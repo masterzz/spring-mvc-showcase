@@ -2,10 +2,13 @@ package org.springframework.aop;
 
 import org.springframework.aop.dao.Dao;
 import org.springframework.aop.dao.IndexDao;
+import org.springframework.aop.dao.OrderDao;
 import org.springframework.aop.dao.UserDao;
 import org.springframework.aop.entity.CityEntity;
 import org.springframework.aop.util.CommonUtil;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.annotation.Order;
 import sun.misc.ProxyGenerator;
 import sun.text.resources.iw.FormatData_iw_IL;
 
@@ -30,12 +33,15 @@ public class Test {
 //        System.out.println(sql);
 
 
-        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
-        Dao bean = ac.getBean(IndexDao.class);
-        System.out.println(bean instanceof Dao);
-        System.out.println(bean instanceof Proxy);
-        bean.query();
-        bean.query("qqq");
+//        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+//        Dao bean = ac.getBean(IndexDao.class);
+//        Dao dao1 = (Dao) ac.getBean(OrderDao.class);
+////        System.out.println(bean instanceof Dao);
+////        System.out.println(bean instanceof Proxy);
+//        bean.query();
+//        bean.query("qqq");
+//        bean.query("qqq");
+//        System.out.println(dao1);
 
 //        Class<?>[] interfaces = new Class[]{Dao.class};
 //        byte[] bytes = ProxyGenerator.generateProxyClass("ZBR", interfaces);
@@ -50,5 +56,12 @@ public class Test {
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
+
+        ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("classpath:aaa.xml");
+        Object dao = classPathXmlApplicationContext.getBean("dao");
+        System.out.println(dao);
+
     }
+
+//    编译  java----jvm---class文件，     其他---copy
 }

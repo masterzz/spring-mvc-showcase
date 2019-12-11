@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/beans/spring-aop.xsd">
+    <!--<context:component-scan base-package="org.springframework.aop"></context:component-scan>-->
     <bean id="dao" class="org.springframework.ioc.dao.IndexDaoImpl"></bean>
 
     <bean id="service" class="org.springframework.ioc.dao.IndexService">
         <property name="dao" ref="dao"></property>
     </bean>
+
+    <bean id="xmlBean" class="org.springframework.aop.XMLAopBean"></bean>
+
+    <!--<aop:config>
+        <aop:pointcut id="allDao"
+                      expression="execution(* org.springframework.aop.dao.*.*(..))"/>
+        <aop:aspect id="aspect" ref="xmlBean">
+            <aop:before pointcut-ref="allDao" method="before"/>
+        </aop:aspect>
+    </aop:config>-->
+
 </beans>

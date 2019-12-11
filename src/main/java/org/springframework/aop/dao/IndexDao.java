@@ -11,6 +11,6 @@ public class IndexDao implements Dao {
 
     @ZBRAnno
     public void query(String str) {
-        System.out.println("query2");
+        System.out.println("hello"+str);
     }
 }
