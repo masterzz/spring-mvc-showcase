@@ -1,4 +1,4 @@
-package org.springframework.ioc.dao.sourceana.dao;
+package org.springframework.ioc.dao.jdkproxy.dao;
 
 public class UserDaoImpl implements UserDao{
 

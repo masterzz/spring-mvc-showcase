@@ -1,4 +1,4 @@
-package org.springframework.ioc.dao.sourceana.dao;
+package org.springframework.ioc.dao;
 
 public interface UserDao {
     public void query();

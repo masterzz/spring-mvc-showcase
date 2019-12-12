@@ -36,13 +36,16 @@ public class Test {
 //        service.service();
 //        service.service();
 //        service.service();
-        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+//        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+//
+//        annotationConfigApplicationContext.getEnvironment().setActiveProfiles("production");
+//        annotationConfigApplicationContext.register(AppConfig.class);
+//        annotationConfigApplicationContext.refresh();
+////        单例是可以循环引用，但是prototype就不可以了
+////        annotationConfigApplicationContext.getBean(AService.class);
+//        IndexService bean = annotationConfigApplicationContext.getBean(IndexService.class);
 
-        annotationConfigApplicationContext.getEnvironment().setActiveProfiles("production");
-        annotationConfigApplicationContext.register(AppConfig.class);
-        annotationConfigApplicationContext.refresh();
-//        单例是可以循环引用，但是prototype就不可以了
-//        annotationConfigApplicationContext.getBean(AService.class);
-        IndexService bean = annotationConfigApplicationContext.getBean(IndexService.class);
+        UserDao userDao = new UserDaoImpl();
+        userDao.query();
     }
 }

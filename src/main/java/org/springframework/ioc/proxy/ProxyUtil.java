@@ -1,4 +1,4 @@
-package org.springframework.ioc.dao.sourceana.proxy;
+package org.springframework.ioc.proxy;
 
 import com.sun.jndi.toolkit.url.UrlUtil;
 

@@ -1,4 +1,4 @@
-package org.springframework.ioc.dao.sourceana.dao;
+package org.springframework.ioc.dao.proxyanalyse.dao;
 
 public interface LubanDao {
     public void query();
