@@ -1,9 +1,8 @@
 package org.springframework.ioc.sourcedeeplearn.spring1.com.luban.test;
 
-import com.luban.dao.UserDao;
-import com.luban.service.UserService;
-import com.luban.service.UserServiceImpl;
-import org.spring.util.BeanFactory;
+
+import org.springframework.ioc.sourcedeeplearn.spring1.com.luban.service.UserService;
+import org.springframework.ioc.sourcedeeplearn.spring1.org.spring.util.BeanFactory;
 
 public class Test {
     public static void main(String[] args) {

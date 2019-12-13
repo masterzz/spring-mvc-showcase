@@ -1,0 +1,78 @@
+Compiled from "Cas1.java"
+public class org.springframework.concurency.cas.Cas1 {
+  static {};
+    Code:
+       0: iconst_0
+       1: putstatic     #12                 // Field m:I
+       4: new           #14                 // class java/util/concurrent/atomic/AtomicInteger
+       7: dup
+       8: iconst_0
+       9: invokespecial #16                 // Method java/util/concurrent/atomic/AtomicInteger."<init>":(I)V
+      12: putstatic     #20                 // Field atomicInteger:Ljava/util/concurrent/atomic/AtomicInteger;
+      15: return
+
+  public org.springframework.concurency.cas.Cas1();
+    Code:
+       0: aload_0
+       1: invokespecial #24                 // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void increase1();
+    Code:
+       0: getstatic     #12                 // Field m:I
+       3: iconst_1
+       4: iadd
+       5: putstatic     #12                 // Field m:I
+       8: return
+
+  public static void increase2();
+    Code:
+       0: getstatic     #20                 // Field atomicInteger:Ljava/util/concurrent/atomic/AtomicInteger;
+       3: invokevirtual #31                 // Method java/util/concurrent/atomic/AtomicInteger.incrementAndGet:()I
+       6: pop
+       7: return
+
+  public static void main(java.lang.String[]) throws java.lang.InterruptedException;
+    Code:
+       0: bipush        20
+       2: anewarray     #40                 // class java/lang/Thread
+       5: astore_1
+       6: iconst_0
+       7: istore_2
+       8: goto          35
+      11: aload_1
+      12: iload_2
+      13: new           #40                 // class java/lang/Thread
+      16: dup
+      17: invokedynamic #45,  0             // InvokeDynamic #0:run:()Ljava/lang/Runnable;
+      22: invokespecial #46                 // Method java/lang/Thread."<init>":(Ljava/lang/Runnable;)V
+      25: aastore
+      26: aload_1
+      27: iload_2
+      28: aaload
+      29: invokevirtual #49                 // Method java/lang/Thread.start:()V
+      32: iinc          2, 1
+      35: iload_2
+      36: bipush        20
+      38: if_icmplt     11
+      41: iconst_0
+      42: istore_2
+      43: goto          55
+      46: aload_1
+      47: iload_2
+      48: aaload
+      49: invokevirtual #52                 // Method java/lang/Thread.join:()V
+      52: iinc          2, 1
+      55: iload_2
+      56: bipush        20
+      58: if_icmplt     46
+      61: getstatic     #55                 // Field java/lang/System.out:Ljava/io/PrintStream;
+      64: getstatic     #12                 // Field m:I
+      67: invokevirtual #61                 // Method java/io/PrintStream.println:(I)V
+      70: invokestatic  #66                 // Method increase2:()V
+      73: getstatic     #55                 // Field java/lang/System.out:Ljava/io/PrintStream;
+      76: getstatic     #20                 // Field atomicInteger:Ljava/util/concurrent/atomic/AtomicInteger;
+      79: invokevirtual #68                 // Method java/util/concurrent/atomic/AtomicInteger.get:()I
+      82: invokevirtual #61                 // Method java/io/PrintStream.println:(I)V
+      85: return
+}

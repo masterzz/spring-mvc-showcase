@@ -1,9 +1,18 @@
 package org.springframework.concurency.aqsdemo;
 
+import java.util.concurrent.TimeUnit;
+
 public class Demo01 {
     private MyLock lock=new MyLock();
     private int m=0;
     public int next(){
+        if(m == 2) {
+            try {
+                TimeUnit.SECONDS.sleep(5);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
        lock.lock();
         try {
             return m++;

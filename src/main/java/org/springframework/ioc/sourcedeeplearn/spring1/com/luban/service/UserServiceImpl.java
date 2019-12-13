@@ -1,7 +1,7 @@
 package org.springframework.ioc.sourcedeeplearn.spring1.com.luban.service;
 
-import com.luban.dao.TestDao;
-import com.luban.dao.UserDao;
+
+import org.springframework.ioc.sourcedeeplearn.spring1.com.luban.dao.UserDao;
 
 public class UserServiceImpl implements UserService {
 
