@@ -4,6 +4,7 @@ package org.springframework.ioc.dao.proxyanalyse.test;
 import org.springframework.ioc.dao.proxyanalyse.dao.LubanDao;
 import org.springframework.ioc.dao.proxyanalyse.dao.LubanDaoImpl;
 import org.springframework.ioc.dao.proxyanalyse.proxy.ProxyUtil;
+import org.springframework.ioc.dao.proxyanalyse.zbr.ZBRProxy;
 
 public class Test {
     public static void main(String[] args) {
@@ -11,5 +12,8 @@ public class Test {
         LubanDao proxy = (LubanDao) ProxyUtil.newInstance(new LubanDaoImpl());
         proxy.query();
 
+        System.out.println("--------------------------");
+        LubanDao proxy1 = (LubanDao)ZBRProxy.newInstance(new LubanDaoImpl());
+        proxy1.query();
     }
 }
