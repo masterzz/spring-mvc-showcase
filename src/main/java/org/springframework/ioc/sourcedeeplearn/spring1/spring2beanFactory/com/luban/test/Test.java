@@ -1,18 +1,20 @@
 package org.springframework.ioc.sourcedeeplearn.spring1.spring2beanFactory.com.luban.test;
 
 
+import org.springframework.ioc.sourcedeeplearn.spring1.spring2beanFactory.com.luban.service.UserService;
 import org.springframework.ioc.sourcedeeplearn.spring1.spring2beanFactory.org.spring.util.AnnotationConfigApplicationContext;
+import org.springframework.ioc.sourcedeeplearn.spring1.spring2beanFactory.org.spring.util.BeanFactory;
 
 public class Test {
     public static void main(String[] args) {
-//        BeanFactory beanFactory = new BeanFactory("spring.xml");
-//
-//        UserService service = (UserService) beanFactory.getBean("service");
+        BeanFactory beanFactory = new BeanFactory("spring_beanfactory.xml");
 
-        AnnotationConfigApplicationContext annotationConfigApplicationContext = new
-                AnnotationConfigApplicationContext();
-        annotationConfigApplicationContext.scan("com.luban.service");
+        UserService service = (UserService) beanFactory.getBean("service");
 
-       // service.find();
+//        AnnotationConfigApplicationContext annotationConfigApplicationContext = new
+//                AnnotationConfigApplicationContext();
+//        annotationConfigApplicationContext.scan("com.luban.service");
+
+        service.find();
     }
 }
