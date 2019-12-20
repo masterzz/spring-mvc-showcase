@@ -8,6 +8,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
+
 /**
  * @author 朱斌荣
  * @Email zhubr11@chinaunicom.cn
@@ -17,6 +19,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 //@Scope("prototype")
+
 public class IndexService /*implements ApplicationContextAware*/ {
     @Autowired
 //    @Qualifier("indexDaoImpl")
@@ -24,6 +27,15 @@ public class IndexService /*implements ApplicationContextAware*/ {
     private IndexDao dao;
 
 //    private ApplicationContext applicationContext;
+
+    public IndexService() {
+        System.out.println("IndexService");
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("init");
+    }
 
     public void service() {
 //        dao.test1();
