@@ -24,9 +24,10 @@ import org.springframework.stereotype.Service;
 @ImportResource
 public class Test {
     public static void main(String[] args) {
+//        这叫做xml方式
 //        ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("classpath:aaa.xml");
 //        IndexService service = (IndexService) classPathXmlApplicationContext.getBean("service");
-//        注解采用的类：
+//        注解采用的类：这叫做java config方式
 //        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
 //        IndexService service = annotationConfigApplicationContext.getBean(IndexService.class);
 //        IndexService service1 = annotationConfigApplicationContext.getBean(IndexService.class);
