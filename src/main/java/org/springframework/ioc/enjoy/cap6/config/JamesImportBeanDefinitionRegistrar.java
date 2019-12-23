@@ -16,8 +16,8 @@ public class JamesImportBeanDefinitionRegistrar implements ImportBeanDefinitionR
 	 */
 	@Override
 	public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
-		boolean bean1 = registry.containsBeanDefinition("com.enjoy.cap6.bean.Dog");
-		boolean bean2 = registry.containsBeanDefinition("com.enjoy.cap6.bean.Cat");
+		boolean bean1 = registry.containsBeanDefinition("org.springframework.ioc.enjoy.cap6.bean.Dog");
+		boolean bean2 = registry.containsBeanDefinition("org.springframework.ioc.enjoy.cap6.bean.Cat");
 		//如果Dog和Cat同时存在于我们IOC容器中,那么创建Pig类, 加入到容器
 		//对于我们要注册的bean, 给bean进行封装,
 		if(bean1 && bean2){

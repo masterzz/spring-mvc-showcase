@@ -17,10 +17,10 @@ public class Cap6Test {
 		System.out.println("bean的类型="+bean1.getClass());
 		System.out.println(bean1 == bean2);
 
-//		String[] beanDefinitionNames = app.getBeanDefinitionNames();
-//		for(String name:beanDefinitionNames){
-//			System.out.println(name);
-//		}
+		String[] beanDefinitionNames = app.getBeanDefinitionNames();
+		for(String name:beanDefinitionNames){
+			System.out.println(name);
+		}
 
 
 
