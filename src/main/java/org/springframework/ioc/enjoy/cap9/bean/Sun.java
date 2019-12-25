@@ -6,8 +6,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class Sun {
 	private Moon moon;
-	
-	public Sun(@Autowired Moon moon){
+
+	@Autowired
+	public Sun(/*@Autowired*/ Moon moon){
 		this.moon = moon;
 		System.out.println("..Constructor................");
 	}
