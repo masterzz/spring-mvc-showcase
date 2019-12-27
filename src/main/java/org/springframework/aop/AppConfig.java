@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ImportResource;
 @Configuration
 //@EnableAspectJAutoProxy(proxyTargetClass = false)
 //@EnableAspectJAutoProxy(proxyTargetClass = true)
-//@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy
 //@ComponentScan("org.springframework.aop")
 @ImportResource("classpath:aaa.xml")
 public class AppConfig {

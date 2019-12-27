@@ -22,10 +22,10 @@ public class Test {
 
     public static void main(String[] args) {
 //        System.out.println("begin");
-//        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
-//        UserDao bean = ac.getBean(UserDao.class);
-//        bean.query();
-//        ac.close();
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        UserDao bean = ac.getBean(UserDao.class);
+        bean.query();
+        ac.close();
 //        CityEntity cityEntity = new CityEntity();
 //        cityEntity.setId("1");
 //        cityEntity.setName("test");
@@ -57,9 +57,9 @@ public class Test {
 //            e.printStackTrace();
 //        }
 
-        ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("classpath:aaa.xml");
-        Object dao = classPathXmlApplicationContext.getBean("dao");
-        System.out.println(dao);
+//        ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("classpath:aaa.xml");
+//        Object dao = classPathXmlApplicationContext.getBean("dao");
+//        System.out.println(dao);
 
     }
 
