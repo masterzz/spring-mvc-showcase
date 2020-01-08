@@ -21,11 +21,6 @@ public class Cap6Test {
 		for(String name:beanDefinitionNames){
 			System.out.println(name);
 		}
-
-
-
-
-
 	}
 }
 

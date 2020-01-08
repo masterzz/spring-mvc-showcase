@@ -25,11 +25,11 @@ public class Cas1 {
         Thread[] threads = new Thread[20];
         for (int i = 0; i < 20; i++) {
             threads[i] =
-            new Thread(()->{
-                for (int j = 0; j < 101; j++) {
-                    increase1();
-                }
-            });
+                    new Thread(()->{
+                        for (int j = 0; j < 101; j++) {
+                            increase1();
+                        }
+                    });
             threads[i].start();
         }
 
