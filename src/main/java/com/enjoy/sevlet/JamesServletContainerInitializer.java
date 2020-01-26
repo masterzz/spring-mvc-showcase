@@ -13,7 +13,7 @@ import javax.servlet.annotation.HandlesTypes;
 import com.enjoy.service.JamesService;
 //容器启动的时候会将@HandlesTypes指定的这个类型下面的子类（实现类，子接口等）传递过来；
 //传入感兴趣的类型；
-@HandlesTypes(value={JamesService.class})
+//@HandlesTypes(value={JamesService.class})
 public class JamesServletContainerInitializer implements ServletContainerInitializer{
 	/**
 	 * tomcat启动时加载应用的时候，会运行onStartup方法；
@@ -29,22 +29,22 @@ public class JamesServletContainerInitializer implements ServletContainerInitial
 	 */
 	@Override
 	public void onStartup(Set<Class<?>> arg0, ServletContext arg1) throws ServletException {
-		System.out.println("感兴趣的类型：");
-		for (Class<?> claz : arg0) {
-			System.out.println(claz);//当传进来后，可以根据自己需要利用反射来创建对象等操作
-		}
-		//注册servlet组件
-		Dynamic servlet = arg1.addServlet("orderServlet", new OrderServlet());
-		//配置servlet的映射信息（路径请求）
-		servlet.addMapping("/orderTest");
-		
-		//注册监听器Listener
-		arg1.addListener(OrderListener.class);
-		
-		//注册Filter
-		javax.servlet.FilterRegistration.Dynamic filter = arg1.addFilter("orderFilter", OrderFilter.class);
-		//添加Filter的映射信息，可以指定专门来拦截哪个servlet
-		filter.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST), true, "/*");
+//		System.out.println("感兴趣的类型：");
+//		for (Class<?> claz : arg0) {
+//			System.out.println(claz);//当传进来后，可以根据自己需要利用反射来创建对象等操作
+//		}
+//		//注册servlet组件
+//		Dynamic servlet = arg1.addServlet("orderServlet", new OrderServlet());
+//		//配置servlet的映射信息（路径请求）
+//		servlet.addMapping("/orderTest");
+//
+//		//注册监听器Listener
+//		arg1.addListener(OrderListener.class);
+//
+//		//注册Filter
+//		javax.servlet.FilterRegistration.Dynamic filter = arg1.addFilter("orderFilter", OrderFilter.class);
+//		//添加Filter的映射信息，可以指定专门来拦截哪个servlet
+//		filter.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST), true, "/*");
 		
 	}
 

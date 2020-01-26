@@ -13,7 +13,7 @@ import java.io.IOException;
  * @author Administrator
  * @date 2018/7/3 20:30
  */
-@WebServlet(value = "/asynOrder", asyncSupported = true)
+//@WebServlet(value = "/asynOrder", asyncSupported = true)
 public class OrderAsynServlet extends HttpServlet {
 
     //支持异步处理asyncSupported = true
