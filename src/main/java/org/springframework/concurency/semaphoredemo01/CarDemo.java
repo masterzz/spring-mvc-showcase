@@ -1,6 +1,6 @@
 package org.springframework.concurency.semaphoredemo01;
 
-import com.sun.javafx.animation.TickCalculation;
+//import com.sun.javafx.animation.TickCalculation;
 
 import java.util.Random;
 import java.util.concurrent.Semaphore;

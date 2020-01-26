@@ -1,6 +1,6 @@
 package org.springframework.ioc.proxy;
 
-import com.sun.jndi.toolkit.url.UrlUtil;
+//import com.sun.jndi.toolkit.url.UrlUtil;
 
 import javax.tools.JavaCompiler;
 import javax.tools.StandardJavaFileManager;

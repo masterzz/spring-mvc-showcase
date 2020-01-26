@@ -14,6 +14,7 @@
 	-->
 	<meta name="_csrf" content="${_csrf.token}"/>
 	<meta name="_csrf_header" content="${_csrf.headerName}"/>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
 <h1><a href="<c:url value="/" />">spring-mvc-showcase</a></h1>
@@ -33,6 +34,7 @@
 		<li><a href="#exceptions">Exception Handling</a></li>
 		<li><a href="#redirect">Redirecting</a></li>
         <li><a href="#async">Async Requests</a></li>
+		<li><a href="#localserver">localserver</a></li>
     </ul>
     <div id="simple">
 		<h2>Simple</h2>
@@ -446,6 +448,22 @@
 				href="<c:url value="/async/deferred-result/timeout-value" />">GET /async/deferred-result/timeout-value</a>
 		</li>
 		</ul>
+	</div>
+
+	<div id="localserver">
+		<h2>本地服务</h2>
+		<p>
+			<em>1，给出一个指定目录，然后查出所有带pbb的文件，采用链表存储</em>
+		</p>
+		<p>
+			<em>2，</em>
+		</p>
+		<p>
+			See the <code>org.springframework.samples.mvc.async</code> package for the @Controller code.
+		</p>
+		<li>
+			<a href="<c:url value="/zbr/queryPath" />">查询一个地址</a>
+		</li>
 	</div>
 </div>
 <script type="text/javascript" src="<c:url value="/resources/jquery/1.6/jquery.js" />"></script>
