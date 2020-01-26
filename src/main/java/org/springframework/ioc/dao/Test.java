@@ -28,9 +28,9 @@ public class Test {
 //        ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("classpath:aaa.xml");
 //        IndexService service = (IndexService) classPathXmlApplicationContext.getBean("service");
 //        注解采用的类：这叫做java config方式
-//        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
-//        IndexService service = annotationConfigApplicationContext.getBean(IndexService.class);
-//        IndexService service1 = annotationConfigApplicationContext.getBean(IndexService.class);
+        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        IndexService service = annotationConfigApplicationContext.getBean(IndexService.class);
+        IndexService service1 = annotationConfigApplicationContext.getBean(IndexService.class);
 ////        service.service();
 ////        System.out.println(service);
 ////        System.out.println(service1);
