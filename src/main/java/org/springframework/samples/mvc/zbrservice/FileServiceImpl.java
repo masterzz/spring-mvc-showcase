@@ -23,7 +23,7 @@ public class FileServiceImpl implements FileService {
                 if (file1.isDirectory()) linkedStack.push(file1.getPath());
                 if (file1.getName().endsWith(end)) {
                     stringSinglyLinkedList.append(file1.getPath());
-//                    file1.delete();
+//                    这里可以放操作文件的操作，比较危险file1.delete();
                 }
             }
         }
